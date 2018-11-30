@@ -6,6 +6,10 @@
 
 <script>
 import SearchBar from "./components/SearchBar";
+require("dotenv").config({ path: "variables.env" });
+
+const API_KEY = process.env.API_KEY
+
 export default {
   name: "App",
   components: {
