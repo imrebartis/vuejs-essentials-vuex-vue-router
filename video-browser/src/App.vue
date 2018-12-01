@@ -6,6 +6,7 @@
 
 <script>
 import SearchBar from "./components/SearchBar";
+import axios from 'axios';
 require("dotenv").config({ path: "variables.env" });
 
 const API_KEY = process.env.API_KEY
@@ -17,7 +18,14 @@ export default {
   },
   methods: {
     onTermChange(searchTerm) {
-      console.log(searchTerm);
+      axios.get('https://googleapis.com/youtube/v3/search', {
+        params: {
+          key: API_KEY,
+          type: 'video',
+          part: 'snippet',
+          q: searchTerm,
+        }
+      }).then(response => console.log(response))
     }
   }
 };
