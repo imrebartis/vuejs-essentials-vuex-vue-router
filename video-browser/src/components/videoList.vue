@@ -1,17 +1,14 @@
 <template>
-    <ul>
-        Video list
-    </ul>
+  <ul>Video list</ul>
 </template>
 
 <script>
 export default {
-    name: 'videoList',
-}
+  name: "VideoList"
+};
 </script>
 
 <style>
-
 </style>
 
 
