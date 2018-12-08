@@ -1,5 +1,7 @@
 <template>
-  <ul>Video list {{videos}}</ul>
+  <ul>
+    <VideoListItem v-for="video in videos"></VideoListItem>
+  </ul>
 </template>
 
 <script>
@@ -8,10 +10,10 @@ import VideoListItem from './VideoListItem';
 export default {
   name: "VideoList",
   components: {
-    VideoListItem
+    VideoListItem,
   },
   props: {
-    videos: Array
+    videos: Array,
   },
 };
 </script>

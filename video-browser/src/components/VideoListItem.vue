@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: VideoListItem
+  name: "VideoListItem",
 };
 </script>
 

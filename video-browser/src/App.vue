@@ -2,14 +2,13 @@
   <div>
     <SearchBar @termChange="onTermChange"></SearchBar>
     <VideoList :videos="videos"></VideoList>
-    {{ videos.length }}
   </div>
 </template>
 
 <script>
 import SearchBar from "./components/SearchBar";
 import axios from 'axios';
-import VideoList from './components/videoList';
+import VideoList from './components/VideoList';
 require("dotenv").config({ path: "variables.env" });
 
 const API_KEY = process.env.API_KEY
