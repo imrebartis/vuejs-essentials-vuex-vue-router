@@ -1,14 +1,16 @@
 <template>
   <div class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
+    <VideoDetail :video=""/>
     <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
   </div>
 </template>
 
 <script>
-import SearchBar from "./components/SearchBar";
 import axios from "axios";
+import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
+import VideoDetail from "./components/VideoDetail";
 require("dotenv").config({ path: "variables.env" });
 
 const API_KEY = process.env.API_KEY;
@@ -17,7 +19,8 @@ export default {
   name: "App",
   components: {
     SearchBar,
-    VideoList
+    VideoList,
+    VideoDetail,
   },
   data() {
     return { videos: [] };
