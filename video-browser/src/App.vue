@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <SearchBar @termChange="onTermChange"></SearchBar>
-    <VideoDetail :video=""/>
+    <VideoDetail :video="selectedVideo"/>
     <VideoList @videoSelect="onVideoSelect" :videos="videos"></VideoList>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     VideoDetail,
   },
   data() {
-    return { videos: [] };
+    return { videos: [], selectedVideo: null };
   },
   methods: {
     onTermChange(searchTerm) {
@@ -41,7 +41,7 @@ export default {
         });
     },
     onVideoSelect(video) {
-      console.log(video);
+      this.selectedVideo = video;
     }
   }
 };
