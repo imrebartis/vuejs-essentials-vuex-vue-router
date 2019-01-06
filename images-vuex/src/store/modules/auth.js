@@ -13,4 +13,8 @@ const mutations = {
   }
 };
 
-const actions = {};
+const actions = {
+  logout: ({ commit }) => {
+    commit("setToken", null);
+  }
+};
