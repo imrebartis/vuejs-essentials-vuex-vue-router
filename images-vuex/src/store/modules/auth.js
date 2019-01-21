@@ -28,7 +28,7 @@ const actions = {
     window.localStorage.setItem('imgur_token', query.access_token);
   },
   logout: ({ commit }) => {
-    commit("setToken", null);
+    commit('setToken', null);
   }
 };
 
