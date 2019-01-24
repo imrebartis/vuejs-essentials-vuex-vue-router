@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main';
 
 const state = {
   token: window.localStorage.getItem('imgur_token')
@@ -26,6 +27,7 @@ const actions = {
     commit('setToken', query.access_token);
     // here btw brackets: 'imgur_token' is a key name, while query.access_token is the piece of info we'll store in localStorage
     window.localStorage.setItem('imgur_token', query.access_token);
+    router.push('/');
   },
   logout: ({ commit }) => {
     commit('setToken', null);
