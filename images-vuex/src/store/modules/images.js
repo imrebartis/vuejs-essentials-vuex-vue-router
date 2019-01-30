@@ -15,11 +15,18 @@ const mutations = {
 };
 
 const actions = {
-    // rootState gives us the ability to reach into other modules & access state
+  // rootState gives us the ability to reach into other modules & access state
   async fetchImages({ rootState }) {
     //   this is the same as const token = rootState.auth.token
     const { token } = rootState.auth;
     const response = await api.fetchImages(token);
     console.log(response);
   }
+};
+
+export default {
+  state,
+  getters,
+  mutations,
+  actions,
 };
