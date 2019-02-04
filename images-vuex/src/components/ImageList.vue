@@ -16,9 +16,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-  img {
-    padding-left: 20px;
-  }
-</style>
