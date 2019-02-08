@@ -23,8 +23,13 @@ const actions = {
     commit('setImages', response.data.data);
   },
 
-  async uploadImages({ commit }, images) {
-    console.log(images);
+  async uploadImages({ rootState }, images) {
+    // get the access token
+    const { token } = rootState.auth;
+    // call api module to do the upload
+    await api.upload(images, token);
+
+    // redirect user to ImageList component
   }
 };
 
