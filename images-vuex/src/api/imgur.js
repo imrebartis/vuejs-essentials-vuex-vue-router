@@ -21,5 +21,21 @@ export default {
         Authorization: `Bearer ${token}`
       }
     })
+  },
+
+  uploadImages(images, token) {
+    // turn images into an array
+    Array.from(images).map(image => {
+      // create formData object
+      const formData = new formData();
+      // 'image' here is a key that has to be provided according to https://apidocs.imgur.com/#c85c9dfc-7487-4de2-9ecd-66f727cf3139, while image is the value of the image file reference
+      formData.append('image', image);
+
+      return axios.post(`${ROOT_URL}/3/image`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+    })
   }
 };
