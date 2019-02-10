@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img width="200" height="160" v-for="image in allImages" :src="image.link" />
+    <img v-for="image in allImages" :src="image.link" />
   </div>
 </template>
 
@@ -16,3 +16,19 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+div {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+}
+img {
+  width: 200px;
+  height: 160px;
+  margin-bottom: 10px;
+}
+</style>
+
